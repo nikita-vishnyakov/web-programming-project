@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<table>
+    <tr>
+        <th>Идентификатор</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Отчество</th>
+        <th>Пол</th>
+        <th>Дата рождения</th>
+    </tr>
+    {% for row in data: %}
+    {% if (row[0] | int) % 2 == 0 : %}
+    <tr style="background-color: gray;">
+    {% else %}
+    <tr style="background-color: white;">
+    {% endif %}
+      <td>{% print(row[0]) %}</td>
+      <td>{% print(row[1]) %}</td>
+      <td>{% print(row[2]) %}</td>
+      <td>{% print(row[3]) %}</td>
+    {% if row[4] == 'М': %}
+      <td style="background-color: blue;">{% print(row[4]) %}</td>
+    {% elif row[4] == 'Ж': %}
+      <td style="background-color: red;">{% print(row[4]) %}</td>
+    {% else %}
+      <td>{% print(row[4]) %}</td>
+    {% endif %}
+      <td>{% print(row[5]) %}</td>
+    </tr>
+    {% endfor %}
+</table>
+<p>Общее количество пациентов: {% print(quant_h[2]) %}</p>
+<p>Из которых мужчин: {% print(quant_h[0]) %}, женщин: {% print(quant_h[1]) %}</p>
+{% endblock %}

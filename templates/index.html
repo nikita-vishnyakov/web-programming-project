@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <form method="post" id="main-form">
+        <div class="record">
+            <label for="username">Логин: </label>
+            <input type=text name=username id="username">
+        </div>
+        <div class="record">
+            <label for="password">Пароль: </label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div class="record">
+            <input type=submit value="Авторизация" id = "button">
+        </div>
+    </form>
+    {% if err_mess == 1: %}
+    <h1 style="color:red;">Пароль неверен!!!</h1>
+    {% endif %}
+    <div id="enter">
+        <div class="cntr image">
+            <a href="{{ url_for('page_home') }}" class="" id="normal_enter">Вход</a>
+<!--            <a href="{{ url_for('page_home') }}" style="text-align: center; width: 350px; margin-left: 200px; margin-top: 505px;" id="joke_enter">Добро пожаловать <br> на нашу багодельню</a>-->
+<!--            <div class="image"></div>-->
+        </div>
+    </div>
+<!--    <script src="{{ url_for('static', filename='js/main.js') }}"></script>-->
+</body>
+</html>

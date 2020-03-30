@@ -1,0 +1,24 @@
+INSERT INTO doctors (lastname, firstname, patronimic, gender, birthday,) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}');
+
+
+
+
+
+lastname,
+firstname,
+patronimic,
+gender,
+birthday,
+
+
+
+Insert into qualifications (title) VALUES ('Хирург');
+Insert into qualifications (title) VALUES ('Офтальмолог');
+Insert into qualifications (title) VALUES ('Терапевт');
+
+
+
+
+
+ALTER TABLE doctors
+  MODIFY qualification INT(11) NOT NULL;

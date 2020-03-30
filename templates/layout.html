@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Веб-приложение</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/form_add.css') }}">
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>Веб-приложение</h1>
+                <nav>
+                    <ul id="main-menu">
+                        <li><a href="{{ url_for('page_home') }}">Домой</a></li>
+<!--                        <li><a href="{{ url_for('page_upload') }}">Загрузка файлов</a></li>-->
+                        <li><a href="{{ url_for('page_doctors') }}">Доктора</a></li>
+                        <li><a href="{{ url_for('page_patients') }}">Пациенты</a></li>
+                        <li><a href=" {{ url_for('add_patients') }} ">Добавить пациента</a></li>
+                        <li><a href=" {{ url_for('add_doctors') }} ">Добавить врача</a></li>
+                        <li><a href=" {{ url_for('add_record') }} ">Записаться на прием</a></li>
+                        <li><a href=" {{ url_for('view_records') }} ">Просмотеть записи</a></li>
+                        <li><a href="{{ url_for('page_about') }}">О приложении</a></li>
+                        <li><a href=" {{ url_for('logout') }} ">Выход</a></li>
+                    </ul>
+                    {% if not session['personal_data'] : %}
+                        <p>Вы вошли как Гость</p>
+                    {% else %}
+                        <p>Вы вошли как {% print( session['personal_data']['login'] ) %}</p>
+                    {% endif %}
+                </nav>
+            </div>
+        </header>
+        <div style="margin-top: 20px;">
+              {% block content %}
+              {% endblock %}
+        </div>
+    </body>
+</html>

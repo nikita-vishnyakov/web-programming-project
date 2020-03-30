@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<table id="tbl-doctors">
+    <tr>
+        <th>Номер доктора</th>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+        <th>Пол</th>
+        <th>Время приема</th>
+    </tr>
+    {% for row in list_doctors: %}
+        <tr>
+            <td>{% print(row[0]) %}</td>
+            <td>{% print(row[1]) %}</td>
+            <td>{% print(row[2]) %}</td>
+            <td>{% print(row[3]) %}</td>
+            <td>{% print(row[4]) %}</td>
+            <td>{% print(row[5]) %}</td>
+        </tr>
+    {% endfor %}
+</table>
+<form action="{{url_for('add_record')}}" method="post" id="frm_add_record">
+    <p>Запись на прием</p>
+    <div>
+        <label for="list_doctors">Номер доктора: </label>
+        <select name="doctor" id="list_doctors">
+            {% for row in list_doctors: %}
+                <option value="{% print(row[0]) %}">{% print(row[0]) %}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="datetime">Время записи: </label>
+        <input type="datetime-local" id="datetime" name="datetime">
+    </div>
+    <div>
+        <input type="submit" id="btn" name="btn" value="Отправить">
+    </div>
+</form>
+{% endblock %}

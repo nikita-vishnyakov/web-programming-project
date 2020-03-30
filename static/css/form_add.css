@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+#mform {
+    width: 550px;
+    display: block;
+    margin: 0 auto;
+}
+#mform > div {
+    display: inline-block;
+}
+#mform > div > label {
+    display: inline-block;
+    width: 200px;
+    padding-bottom: 5px;
+}
+#mform > div > input {
+    width: 170px;
+}
+#button {
+    margin-left: 150px;
+    display: block;
+}

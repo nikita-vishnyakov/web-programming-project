@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+#enter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cntr a {
+    margin: 525px 350px 350px 330px;
+    display: flex;
+    color: black;
+    font-size: 30px;
+    font-family: 'Roboto Slab', Serif;
+    text-decoration: none;
+
+}
+.txt {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: -50px;
+}
+.image {
+    background-image: url('../img/bugs.jpg');
+    width: 750px;
+    height: 750px;
+}
+#main-menu {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+#main-menu a {
+    text-decoration: none;
+}
+#main-menu li {
+    display: inline-block;
+    border: 1px black solid;
+    padding: 10px;
+    margin: 0px 8px;
+    color: black;
+}
+#main-menu li:visited #main-menu li:link {
+    color: black;
+}
+#main-menu li:hover {
+    background-color: #fbc653;
+    color: white;
+}
+#main-menu li:first-child {
+    margin-left: 0px;
+}
+.hidden {
+    display: none;
+}
+#main-form {
+
+}
+.record {
+    width: 350px;
+}
+.record:last-child {
+    margin-top: 10px;
+}
+.record > * {
+    display: inline-block;
+    margin: 10px 0px;
+}
+.record label {
+    display: inline-block;
+    width: 60px;
+}
+.record input {
+    margin-left: 10px;
+}
+.record input[type="submit"] {
+    width: 120px;
+    margin-left: 90px;
+    border: black 1px solid;
+    border-radius: 10px;
+}
+.node_mess {
+    color: red;
+    font-size: 25px;
+}
+.success_mess {
+    color: green;
+    font-size: 25px;
+}
+
+#tbl-doctors tr:nth-child(2n) td {
+    background: white;
+}
+#tbl-doctors tr:nth-child(2n+1) td {
+    background: gray;
+}
+#tbl-doctors td {
+    text-align: center;
+    width: 120px;
+}
+#frm_add_record {
+    margin-top: 50px;
+    width: 400px;
+    margin: 50px auto;
+}
+#frm_add_record p {
+    font-size: 30px;
+    text-align: center;
+}
+#frm_add_record > div {
+    margin-bottom: 50px;
+}
+#frm_add_record > div >* {
+    display: inline-block;
+    width: 150px;
+}
+#btn {
+    margin-left: 100px;
+}
+#frm_add_record > div > input, #frm_add_record > div > select {
+    width: 200px;
+}
+#prec {
+    font-size: 25px;
+    margin-left: 400px;
+}

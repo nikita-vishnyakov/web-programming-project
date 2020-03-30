@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="{{url_for('add_doctors')}}" method="post" enctype="multipart/form-data" id="mform">
+    <div>
+        <label for="lastname">Фамилия</label>
+        <input type="text" name="lastname" id="lastname">
+        <br><br>
+    </div>
+    <div>
+        <label for="firstname">Имя</label>
+        <input type="text" name="firstname" id="firstname">
+        <br><br>
+    </div>
+    <div>
+        <label for="patronimic">Отчество</label>
+        <input type="text" name="patronimic" id="patronimic">
+        <br><br>
+    </div>
+    <div>
+        <label for="gender">Пол</label>
+        <select name="gender" id="gender">
+            <option value="М">Мужской</option>
+            <option value="Ж">Женский</option>
+        </select>
+        <br><br>
+    </div>
+    <div>
+        <label for="qualification">Квалификация</label>
+        <select name="qualification" id="qualification">
+            {% for record in qualifications: %}
+                <option value="{% print(record[0]) %}">{% print(record[1]) %}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+    </div>
+    <div>
+        <label for="birthdate">Дата рождения</label>
+        <input type="date" name="birthdate" id="birthdate" value="2001-01-01">
+        <br><br>
+    </div>
+    <div id="button">
+        <input type="submit" name="send_form" title="Отправить">
+    </div>
+</form>
+{% endblock %}

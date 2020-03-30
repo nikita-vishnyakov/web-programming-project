@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<p id="prec">Запись на прием</p>
+<table>
+    <tr>
+        <th>Фамилия больного</th>
+        <th>Имя больного</th>
+        <th>Отчество больного</th>
+        <th>Фамилия доктора</th>
+        <th>Имя доктора</th>
+        <th>Отчество доткора</th>
+        <th>Квалификация</th>
+    </tr>
+    {% for row in list_records: %}
+        <tr>
+            <td>{% print(row[0]) %}</td>
+            <td>{% print(row[1]) %}</td>
+            <td>{% print(row[2]) %}</td>
+            <td>{% print(row[3]) %}</td>
+            <td>{% print(row[4]) %}</td>
+            <td>{% print(row[5]) %}</td>
+            <td>{% print(row[6]) %}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

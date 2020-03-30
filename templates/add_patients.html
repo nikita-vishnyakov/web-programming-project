@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+<p id="error_message">
+    {% for row in mess['error']: %}
+    <p class="node_mess">{% print(row) %}</p>
+    {% endfor %}
+    {% for row in mess['success']: %}
+    <p class="success_mess">{% print(row) %}</p>
+    {% endfor %}
+</p>
+<form action="{{url_for('add_patients')}}" method="post" enctype="multipart/form-data" id="mform">
+    <div>
+        <label for="login">Логин: </label>
+        <input type="text" name="login" id="login">
+        <br><br>
+    </div>
+    <div>
+        <label for="password">Пароль: </label>
+        <input type="password" name="password" id="password">
+        <br><br>
+    </div>
+    <div>
+        <label for="re-password">Повторите пароль: </label>
+        <input type="password" name="re-password" id="re-password">
+        <br><br>
+    </div>
+    <div>
+        <label for="lastname">Фамилия</label>
+        <input type="text" name="lastname" id="lastname">
+        <br><br>
+    </div>
+    <div>
+        <label for="firstname">Имя</label>
+        <input type="text" name="firstname" id="firstname">
+        <br><br>
+    </div>
+    <div>
+        <label for="patronimic">Отчество</label>
+        <input type="text" name="patronimic" id="patronimic">
+        <br><br>
+    </div>
+    <div>
+        <label for="gender">Пол</label>
+        <select name="gender" id="gender">
+            <option value="М">Мужской</option>
+            <option value="Ж">Женский</option>
+        </select>
+        <br><br>
+    </div>
+    <div>
+        <label for="birthdate">Дата рождения</label>
+        <input type="date" name="birthdate" id="birthdate" value="2001-01-01">
+        <br><br>
+    </div>
+    <div id="button">
+        <input type="submit" name="send_form" title="Отправить">
+    </div>
+</form>
+{% endblock %}
